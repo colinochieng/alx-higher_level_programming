@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-
-for i in range(97, 123):
-    if i == ord('q') or i == ord('e'):
+for i in range(ord('a'), ord('{')):
+    if chr(i) == 'e' or chr(i) == 'q':
         continue
-    print(chr(i) , end="")
-
-
+    print(f'{i:c}', end='')
