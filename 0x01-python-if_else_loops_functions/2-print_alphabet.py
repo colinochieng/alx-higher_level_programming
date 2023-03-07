@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for i in range(ord('a'), ord('{')):
-    print(f'{i:c}', end='')
+    print('{:c}'.format(i), end='')

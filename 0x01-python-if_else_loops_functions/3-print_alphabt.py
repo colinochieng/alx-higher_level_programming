@@ -2,4 +2,4 @@
 for i in range(ord('a'), ord('{')):
     if chr(i) == 'e' or chr(i) == 'q':
         continue
-    print(f'{i:c}', end='')
+    print('{:c}'.format(i), end='')
