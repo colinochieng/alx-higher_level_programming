@@ -3,7 +3,7 @@
 if __name__ == "__main__":
 
     from sys import argv
-    from calculator_1 import calc
+    import calculator_1 as calc
 
     count = len(argv) - 1
     if count != 3:
