@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-from sys import argv
-from calculator_1 import calc
-
 
 if __name__ == "__main__":
+
+    from sys import argv
+    from calculator_1 import calc
 
     count = len(argv) - 1
     if count != 3:
