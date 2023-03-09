@@ -6,12 +6,7 @@ if __name__ == "__main__":
     a = 10
     b = 5
 
-    tot = calc.add(a, b)
-    pro = calc.mul(a, b)
-    quotient = calc.div(a, b)
-    diff = calc.sub(a, b)
-
-    print('{0} + {1} = {2}\n{0} -\
-    {1} = {3}'.format(a, b, tot, diff))
-    print('{0} * {1} = {2}\n{0} /\
-    {1} = {3}'.format(a, b, pro, quotient))
+    print('{} + {} = {}'.format(a, b, calc.add(a, b)))
+    print('{} - {} = {}'.format(a, b, calc.mul(a, b)))
+    print('{} * {} = {}'.format(a, b, calc.div(a, b)))
+    print('{} / {} = {}'.format(a, b, calc.sub(a, b)))
