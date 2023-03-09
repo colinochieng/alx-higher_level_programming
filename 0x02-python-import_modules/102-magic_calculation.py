@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 def magic_calculation(a, b):
-    result = 0
-    for i in range(1, 3):
-        try:
-            if (i > a):
-                raise (Exception('Too far'))
-            else:
-                result = result + ((a ** b) / i)
-        except (Exception):
-            result = (b + a)
-            break
-    return (result)
+    """Match bytecode provided by Holberton School"""
+   import magic_calculation_102 as calc
+
+    if a < b:
+        c = calc.add(a, b)
+        for i in range(4, 6):
+            c = calc.add(c, i)
+        return (c)
+    else:
+        return(calc.sub(a, b))
