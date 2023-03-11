@@ -7,7 +7,7 @@ def new_in_list(my_list, idx, element):
     else:  
         new = []
         i = 0
-        while i < value:
+        while i <= value:
             new.append(my_list[i])
             i += 1
         new[idx] = element
