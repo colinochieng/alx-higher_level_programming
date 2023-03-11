@@ -9,7 +9,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *start, *end, *ptr;
-	int i, j , k;
+	int i, j, k;
 
 	if (*head == NULL)
 		return (1);
@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 	}
 
 	start = *head;
-	j = i / 2 ;
+	j = i / 2;
 
 	while (start != NULL && j >= 0)
 	{
