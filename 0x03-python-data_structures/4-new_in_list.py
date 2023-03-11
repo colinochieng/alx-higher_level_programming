@@ -2,10 +2,11 @@
 
 def new_in_list(my_list, idx, element):
     value = len(my_list) - 1
+    new = []
+
     if idx < 0 or value < idx:
         return (my_list)
-    else:  
-        new = []
+    else:
         i = 0
         while i <= value:
             new.append(my_list[i])
