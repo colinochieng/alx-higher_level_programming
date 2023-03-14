@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
 		return (1);
 
 	i = 0;
-	end = arr_int(head, i);
+	end = arr_int(head, &i);
 	start = *head;
 	j = i / 2;
 
