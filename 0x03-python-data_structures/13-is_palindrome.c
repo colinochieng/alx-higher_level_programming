@@ -10,63 +10,39 @@ int *arr_int(listint_t **head, int *i);
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *start;
-	int i, j, *end;
+	listint_t *start, *end, *ptr;
+	int i, j, k;
 
 	if (*head == NULL)
 		return (1);
 
+	ptr = *head;
 	i = 0;
-	end = arr_int(head, &i);
+	while (ptr != NULL)
+	{
+		i++;
+		ptr = ptr->next;
+	}
+
 	start = *head;
 	j = i / 2;
 
-	while (start != NULL && i >= j)
+	while (start != NULL && j >= 0)
 	{
-		if (start->n != end[i])
+		end = *head;
+		k = 0;
+		while (end != NULL && k < i - 1)
+		{
+			k++;
+			end = end->next;
+		}
+		if (start->n != end->n)
 			return (0);
 
 		start = start->next;
+		j--;
 		i--;
 	}
 
-	free(end);
 	return (1);
-}
-
-/**
-*arr_int - function to generate an array of ints
-*@head: pointer to list
-*@i: pointer to size of an array generated
-*Return: an array of ints
-*/
-
-int *arr_int(listint_t **head, int *i)
-{
-	listint_t *ptr = *head;
-	int *arr;
-	int j = 0;
-
-	while (ptr)
-	{
-		(*i)++;
-		j++;
-		ptr = ptr->next;
-	}
-
-	arr = malloc(sizeof(int) * (j));
-
-	if (arr == NULL)
-		return (NULL);
-	ptr = *head;
-	j = 0;
-
-	while (ptr != NULL)
-	{
-		arr[j] = ptr->n;
-		j++;
-		ptr = ptr->next;
-	}
-
-	return (arr);
 }
