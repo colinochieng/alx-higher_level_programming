@@ -49,24 +49,25 @@ int *arr_int(listint_t **head, int *i)
 
 	while (ptr)
 	{
-		i++;
+		(*i)++;
 		j++;
 		ptr = ptr->next;
 	}
 
-	arr = malloc(sizeof(int) * j);
+	arr = malloc(sizeof(int) * (j + 1));
 
 	if (arr == NULL)
 		return (NULL);
 	ptr = *head;
 	j = 0;
 
-	while (ptr)
+	while (ptr != NULL)
 	{
 		arr[j] = ptr->n;
 		j++;
 		ptr = ptr->next;
 	}
 
+	arr[j] = NULL;
 	return (arr);
 }
