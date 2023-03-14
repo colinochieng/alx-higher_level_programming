@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 }
 
 /**
-*@arr_int - function to generate an array of ints
+*arr_int - function to generate an array of ints
 *@head: pointer to list
 *@i: pointer to size of an array generated
 *Return: an array of ints
