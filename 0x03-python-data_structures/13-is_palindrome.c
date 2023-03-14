@@ -54,7 +54,7 @@ int *arr_int(listint_t **head, int *i)
 		ptr = ptr->next;
 	}
 
-	arr = malloc(sizeof(int) * (j + 1));
+	arr = malloc(sizeof(int) * (j));
 
 	if (arr == NULL)
 		return (NULL);
@@ -68,6 +68,5 @@ int *arr_int(listint_t **head, int *i)
 		ptr = ptr->next;
 	}
 
-	arr[j] = NULL;
 	return (arr);
 }
