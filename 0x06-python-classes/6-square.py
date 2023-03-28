@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Private instance attribute: size"""
 
 
@@ -13,13 +14,13 @@ class Square:
         return self.__size ** 2
 
     @property
-    """Retrieve value"""
     def size(self):
+        """Retrieve value"""
         return self.__size
 
     @size.setter
-    """Value setter"""
     def size(self, value):
+        """Value setter"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -41,8 +42,8 @@ class Square:
         return self.__position
 
     @position.setter
-    """Sets Value"""
     def position(self, value):
+        """Sets Value"""
         if type(value) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif len(value) != 2:
