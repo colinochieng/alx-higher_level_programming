@@ -56,3 +56,13 @@ Holberton.
  How are you:
 <BLANKLINE>
  John
+
+>>> text_indentation('Holberton. School? How are you: John'
+...                  '                                 ') #doctest: +NORMALIZE_WHITESPACE
+Holberton.
+<BLANKLINE>
+ School?
+<BLANKLINE>
+ How are you:
+<BLANKLINE>
+ John
