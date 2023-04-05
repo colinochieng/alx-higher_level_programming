@@ -47,7 +47,11 @@ Traceback (most recent call last):
     ...
 OverflowError: cannot convert float infinity to integer
 
-``Missing argument``
+``Missing one arguments``
+>>> add_integer(4)
+102
+
+``Missing both arguments``
 >>> add_integer()
 Traceback (most recent call last):
     ...
