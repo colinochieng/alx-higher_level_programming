@@ -36,7 +36,7 @@ Hello everyone.
 
 
 ->Testing a string with all the characters
->>> text = "I came. I saw, I conquered: or at least that's what I thought. Yet then, did I really achieve anything?"
+>>> text = "I came. I saw, I conquered: or at least that's what I thought. Yet then, did I really achieve anything? Great"
 >>> text_indentation(eval("text"))
 I came.
 <BLANKLINE>
@@ -46,5 +46,5 @@ I came.
 <BLANKLINE>
  Yet then, did I really achieve anything?
 <BLANKLINE>
-
+Great
 
