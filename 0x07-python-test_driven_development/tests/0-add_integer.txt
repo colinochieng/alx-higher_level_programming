@@ -1,0 +1,54 @@
+```Testing all about my function that adds integers```
+-The add_integer function accepts only integers and floats
+-It raises an 'TypeError' for any data other data type
+
+``importing``
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+``Trying to pass to positive integers``
+
+>>> add_integer(2, 8)
+10
+
+``Trying negative integers``
+>>> add_integer(-2, -4)
+-6
+
+``passing negative and positive integers``
+>>> add_integer(2, -2)
+0
+
+``Passing float``
+>>> add_integer(3.5, 4.5)
+7
+
+``Passing string as first argument``
+>>> add_integer("2", 5)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+``Passing string as second argument``
+>>> add_integer(2, "5")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+``Passing nan``
+>>> add_integer(2, float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+``testing float overflow``
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+``Missing argument``
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
