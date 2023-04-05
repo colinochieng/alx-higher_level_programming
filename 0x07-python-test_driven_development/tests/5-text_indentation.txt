@@ -1,0 +1,37 @@
+``Testing functionality of text_indentation``
+
+->Importing
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+->Passing a text with no special characters
+>>> text = "A wonderful location"
+>>> text_indentation(text)
+A wonderful location
+
+->Passing a text with the characters
+>>> text = "Did you hear that? It sounded like a question, but it ended with a period, so I'm not sure"
+>>> text_indentation(text)
+Did you hear that?
+<BLANKLINE>
+ It sounded like a question, but it ended with a period, so I'm not sure
+
+-> Passing a non-string character
+>>> text_indentation({"name", "School"})
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+->Passing no argument
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+-> passing a text generating blanklines
+>>> text_indentation("Hello everyone. when is the meeting?")
+Hello everyone.
+<BLANKLINE>
+ when is the meeting?
+<BLANKLINE> 
+
+

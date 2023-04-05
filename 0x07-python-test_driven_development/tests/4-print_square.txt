@@ -1,0 +1,43 @@
+``Testing print_square Functionality``
+->Importing
+>>> print_square = __import__('4-print_square').print_square
+
+->Testing value 0
+>>> print_square(0)
+
+
+->Testing value 1
+>>> print_square(1)
+#
+
+->Testing value -2
+>>> print_square(-2)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+->Testing a tuple
+>>> print_square((2, ))
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+-> Testing a Float
+>>> print_square(3.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+->Passing no argument
+>>> print_square()
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+->Passing value 5(positive)
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
