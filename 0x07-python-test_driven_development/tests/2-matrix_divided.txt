@@ -1,0 +1,88 @@
+``Testing matrix divide```
+``Import``    
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    
+``Testing simple matrix``
+>>> matrix_divided([[9]], 3)
+[[3.0]]
+>>> matrix_divided([[0]], 3)
+[[0.0]]
+
+``Using a negative divisor``
+>>> matrix_divided([[3, 4], [5, 6]], -2)
+[[-1.5, -2.0], [-2.5, -3.0]]
+
+``Testing Matrix with lists of different sizes``
+>>> matrix_divided([[3, 4], [5, 6], [10]], 2)
+Traceback (most recent call last):
+   ...
+TypeError: Each row of the matrix must have the same size
+
+``Using 0 for divisor``
+>>> matrix_divided([[3, 4], [5, 6]], 0)
+Traceback (most recent call last):
+   ...
+ZeroDivisionError: division by zero
+
+``Matrix of lists containing some non-int or non-float``
+>>> matrix_divided([[3, "7"], [5, 6]], 2)
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+``Matrix of floats and a float div``
+>>> matrix_divided([[4.4, 3.7], [5.8, 9.2]], 2.7)
+[[1.63, 1.37], [2.15, 3.41]]
+
+``a non-float or non-int div``
+>>> matrix_divided([[4, 3.7], [5, 9.2]], (3, ))
+Traceback (most recent call last):
+   ...
+TypeError: div must be a number
+
+``a matrix of matrices``
+>>> matrix_divided([[[2, 4, 5], [3, 6, 7]], [[8, 9], [5, 4]]], 2)
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+``Using a NaN divisor``
+>>> matrix_divided([[4, 3.7], [5, 9.2]], float('nan'))
+[[nan, nan], [nan, nan]]
+
+``Testing inf divisor``
+>>> matrix_divided([[4, 3.7], [5, 9.2]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+``A matrix of lists of NaN and a NaN divisor``
+>>> matrix_divided([[float('nan'), float('nan')], [float('nan'), float('nan')]], float('nan'))
+[[nan, nan], [nan, nan]]
+
+``Changing to an inf divisor``
+>>> matrix_divided([[float('nan'), float('nan')], [float('nan'), float('nan')]], float('inf'))
+[[nan, nan], [nan, nan]]
+
+``Changing to matrix of inf lists``
+>>> matrix_divided([[float('inf'), float('inf')], [float('inf'), float('inf')]], float('inf'))
+[[nan, nan], [nan, nan]]
+
+``Using only one argument``
+>>> matrix_divided([[4, 3.7], [5, 9.2]])
+Traceback (most recent call last):
+   ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+``Missing both arguments``
+>>> matrix_divided()
+Traceback (most recent call last):
+   ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+``Passing a non matrix as first argument``
+>>> matrix_divided([2, 4], 3)
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
