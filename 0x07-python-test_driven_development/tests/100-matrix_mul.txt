@@ -9,6 +9,7 @@ Traceback (most recent call last):
 TypeError: m_a must be a list
 
 ->Passing a non list for b
+>>> matrix_mul([[2, 4]], (2, 4))
 Traceback (most recent call last):
     ...
 TypeError: m_b must be a list
