@@ -1,0 +1,106 @@
+``Test for Matrix_mul``
+->Importing
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+->Passing a non list for a
+>>> matrix_mul("School", [[9]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+
+->Passing a non list for b
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+
+->Passing list not of lisr
+->Case 1
+>>> matrix_mul([2, 4, (2, )], [[9]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list of lists
+
+->Case 2
+>>> matrix_mul([[9]], [2, 4, (2, )])
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list of lists
+
+->Empty Matrix
+>>> matrix_mul([], [[]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+
+>>> matrix_mul([[2, 5]], [[]])
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+
+->Passing Matrix with lists with non-int or non-float
+>>> matrix_mul([[2.3, 3.7, 9, (2, 4)]], [[2, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats
+
+>>> matrix_mul([[2, 4]], [[2.3, 3.7, 9, (2, 4)]])
+Traceback (most recent call last):
+    ...
+TypeError: m_b should contain only integers or floats
+
+->Passing Matrix with lists of variable sizes
+>>> matrix_mul([[2, 4], [3, 5, 6]], [[2, 3]])
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_a must be of the same size
+
+>>> matrix_mul([[2, 3]], [[2, 4], [3, 5, 6]])
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_b must be of the same size
+
+->Testing non multiplicands
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
+
+-> Passing no Parameter
+>>> matrix_mul()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+->Passing only one argument
+>>> matrix_mul([[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+->Passing float inf or nan
+>>> matrix_mul([[1, 2, 3], [float('inf'), 5, 6]], [[7, 8], [9, 10], [11, 12]])
+[[58, 64], [inf, inf]]
+>>> matrix_mul([[1, 2, 3], [float('inf'), 5, 6]], [[7, 8], [9, 10], [float('nan'), 12]])
+[[nan, 64], [nan, inf]]
+>>> matrix_mul([[1, 2, 3], [float('nan'), 5, 6]], [[7, 8], [9, 10], [float('inf'), 12]])
+[[inf, 64], [nan, nan]]
+
+->Passing floats and ints
+>>> matrix_mul([[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]])
+[[19.0, 22.0], [43.0, 50.0]]
+
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+[[19, 22], [43, 50]]
+
+>>> matrix_mul([[1, 2.0], [3, 4.0]], [[5.0, 6], [7.0, 8]])
+[[19.0, 22.0], [43.0, 50.0]]
+
+>>> matrix_mul([[1.25, 2.33], [3.50, 4.75]], [[1.33, 2.00], [3.00, 4.25]])
+[[8.6525, 12.4025], [18.905, 27.1875]]
+
+>>> matrix_mul([[1, 2], [3, -4]], [[-5.5, 6.6], [7.7, -8.8]]) # doctest: +ELLIPSIS
+[[9.9, -11.0...], [-47.3, 55.0]]
+
+>>> matrix_mul([[1.1, -2.2], [-3.3, 4.4]], [[-5, 6], [7, -8]]) # doctest: +ELLIPSIS
+[[-20.9..., 24.2...], [47.3..., -55.0]]
+
