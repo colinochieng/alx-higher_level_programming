@@ -1,0 +1,113 @@
+``Test for lazy_matrix_mul``
+->Importing
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+->Passing a non list for a
+>>> lazy_matrix_mul("School", [[9]])
+Traceback (most recent call last):
+    ...
+ValueError: Scalar operands are not allowed, use '*' instead
+
+->Passing a non list for b
+>>> lazy_matrix_mul([[2, 4]], (2, 4))
+array([20])
+
+->Passing list not of lisr
+->Case 1
+>>> lazy_matrix_mul([2, 4, (2, )], [[9]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+->Case 2
+>>> lazy_matrix_mul([[9]], [2, 4, (2, )])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+->Empty Matrix
+>>> lazy_matrix_mul([], [[]])
+Traceback (most recent call last):
+    ...
+ValueError: shapes (0,) and (1,0) not aligned: 0 (dim 0) != 1 (dim 0)
+
+>>> lazy_matrix_mul([[2, 5]], [[]])
+Traceback (most recent call last):
+    ...
+ValueError: shapes (1,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+
+->Passing Matrix with lists with non-int or non-float
+>>> lazy_matrix_mul([[2.3, 3.7, 9, (2, 4)]], [[2, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+>>> lazy_matrix_mul([[2, 4]], [[2.3, 3.7, 9, (2, 4)]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+->Passing Matrix with lists of variable sizes
+>>> lazy_matrix_mul([[2, 4], [3, 5, 6]], [[2, 3]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+>>> lazy_matrix_mul([[2, 3]], [[2, 4], [3, 5, 6]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+->Testing non multiplicands
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]])
+Traceback (most recent call last):
+    ...
+ValueError: shapes (2,3) and (2,3) not aligned: 3 (dim 1) != 2 (dim 0)
+
+-> Passing no Parameter
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+->Passing only one argument
+>>> lazy_matrix_mul([[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+->Passing float inf or nan
+>>> lazy_matrix_mul([[1, 2, 3], [float('inf'), 5, 6]], [[7, 8], [9, 10], [11, 12]])
+array([[58., 64.],
+       [inf, inf]])
+>>> lazy_matrix_mul([[1, 2, 3], [float('inf'), 5, 6]], [[7, 8], [9, 10], [float('nan'), 12]])
+array([[nan, 64.],
+       [nan, inf]])
+>>> lazy_matrix_mul([[1, 2, 3], [float('nan'), 5, 6]], [[7, 8], [9, 10], [float('inf'), 12]])
+array([[inf, 64.],
+       [nan, nan]])
+
+->Passing floats and ints
+>>> lazy_matrix_mul([[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]])
+array([[19., 22.],
+       [43., 50.]])
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+array([[19, 22],
+       [43, 50]])
+
+>>> lazy_matrix_mul([[1, 2.0], [3, 4.0]], [[5.0, 6], [7.0, 8]])
+array([[19., 22.],
+       [43., 50.]])
+
+>>> lazy_matrix_mul([[1.25, 2.33], [3.50, 4.75]], [[1.33, 2.00], [3.00, 4.25]])
+array([[ 8.6525, 12.4025],
+       [18.905 , 27.1875]])
+
+>>> lazy_matrix_mul([[1, 2], [3, -4]], [[-5.5, 6.6], [7.7, -8.8]])
+array([[  9.9, -11. ],
+       [-47.3,  55. ]])
+
+>>> lazy_matrix_mul([[1.1, -2.2], [-3.3, 4.4]], [[-5, 6], [7, -8]])
+array([[-20.9,  24.2],
+       [ 47.3, -55. ]])
