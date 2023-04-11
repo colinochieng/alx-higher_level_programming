@@ -1,0 +1,53 @@
+===========================================================================
+                              Testing Mylist
+===========================================================================
+->Importing
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList([3, 4, 6])
+>>> print(my_list)
+[3, 4, 6]
+>>> my_list.print_sorted()
+[3, 4, 6]
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[2, 3, 4, 6]
+>>> my_list.extend([5.6, 3.5])
+>>> my_list.print_sorted()
+[2, 3, 3.5, 4, 5.6, 6]
+
+->slicing
+>>> print(my_list[-4:-1])
+[6, 2, 5.6]
+
+->Include strings
+>>> my_list.insert(2, "Name")
+>>> print(my_list)
+[3, 4, 'Name', 6, 2, 5.6, 3.5]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+->Remove and delete
+>>> y = my_list.pop(2)
+>>> y
+'Name'
+>>> my_list.print_sorted()
+[2, 3, 3.5, 4, 5.6, 6]
+>>> my_list.remove(3)
+>>> my_list.print_sorted()
+[2, 3.5, 4, 5.6, 6]
+>>> del my_list[3]
+>>> my_list.print_sorted()
+[2, 3.5, 4, 6]
+
+->Inserting
+>>> my_list.insert(2, ([3, 5],))
+>>> print(my_list)
+[4, 6, ([3, 5],), 2, 3.5]
+
+->Inheritance test
+>>> print(isinstance(my_list, list))
+True
+>>> print(dir(my_list)) #doctest: +NORMALIZE_WHITESPACE
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'print_sorted', 'remove', 'reverse', 'sort']
