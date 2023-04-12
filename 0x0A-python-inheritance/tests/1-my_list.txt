@@ -61,3 +61,9 @@ True
 >>> new_l = 50
 >>> print(new_l)
 50
+
+->Manipulating new with list methods
+>>> new_l.append()
+Traceback (most recent call last):
+...
+AttributeError: 'int' object has no attribute 'append'
