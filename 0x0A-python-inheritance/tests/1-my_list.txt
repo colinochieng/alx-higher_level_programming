@@ -67,3 +67,8 @@ True
 Traceback (most recent call last):
 ...
 AttributeError: 'int' object has no attribute 'append'
+
+::New instance
+>>> new_2 = MyList()
+>>> new_2.print_sorted()
+[]
