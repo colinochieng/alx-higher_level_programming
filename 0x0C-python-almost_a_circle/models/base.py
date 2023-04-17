@@ -8,8 +8,9 @@ import csv
 class Base:
     """The base class"""
     __nb_objects = 0
+
     def __init__(self, id=None):
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             self.__class__.__nb_objects += 1
@@ -21,7 +22,7 @@ class Base:
         Returns the JSON string
         representation of list_dictionaries
         """
-        if list_dictionaries == None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -34,12 +35,13 @@ class Base:
         file = cls.__name__ + '.json'
         with open(file, mode='w', encoding='utf-8') as fi:
             """"""
-            fi.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
+            fi.write(cls.to_json_string\
+                     ([obj.to_dictionary() for obj in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
         """Returns the list of the JSON string representation json_string"""
-        if json_string == None or len(json_string) == 0:
+        if json_string is None or len(json_string) == 0:
             return []
         else:
             return json.loads(json_string)
@@ -84,7 +86,7 @@ class Base:
         with open(filename, "w") as file:
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(rows)          
+            writer.writerows(rows)       
 
     @classmethod
     def load_from_file_csv(cls):
