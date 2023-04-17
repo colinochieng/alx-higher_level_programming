@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Python Almost a Circle"""
 from models.rectangle import Rectangle
-import json
 
 
 class Square(Rectangle):
