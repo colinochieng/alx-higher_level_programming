@@ -35,8 +35,9 @@ class Base:
         file = cls.__name__ + '.json'
         with open(file, mode='w', encoding='utf-8') as fi:
             """"""
-            fi.write(cls.to_json_string\
-                     ([obj.to_dictionary() for obj in list_objs]))
+            fi.write(cls.to_json_string (
+                [obj.to_dictionary() for obj in list_objs]
+            ))
 
     @staticmethod
     def from_json_string(json_string):
@@ -86,7 +87,7 @@ class Base:
         with open(filename, "w") as file:
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(rows)       
+            writer.writerows(rows)
 
     @classmethod
     def load_from_file_csv(cls):
