@@ -8,7 +8,7 @@ class Square(Rectangle):
     """Derived class of rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x=x, y=y, id=id)
-    
+
     def __str__(self):
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
 
@@ -25,7 +25,7 @@ class Square(Rectangle):
         if args:
             attrs_list = ['id', 'widht', 'height', 'x', 'y']
             if len(args) > 1:
-                width=height = args[1]
+                width = height = args[1]
                 args = list(args)
                 args[1:1 + 1] = [width, height]
                 print(args)
