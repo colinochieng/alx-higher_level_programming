@@ -35,9 +35,9 @@ class Base:
         file = cls.__name__ + '.json'
         with open(file, mode='w', encoding='utf-8') as fi:
             """"""
-            fi.write(cls.to_json_string (
-                [obj.to_dictionary() for obj in list_objs]
-            ))
+            objs_dicts = [obj.to_dictionary() for obj in list_objs]
+            json_string = cls.to_json_string(objs_dicts)
+            fi.write(json_string)
 
     @staticmethod
     def from_json_string(json_string):
