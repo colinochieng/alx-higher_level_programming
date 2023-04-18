@@ -12,15 +12,18 @@ class Square(Rectangle):
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
 
     @property
+    """Return size of Square"""
     def size(self):
         return self.width
 
     @size.setter
+    """Resets dimensions of square models"""
     def size(self, value):
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Updates the fields of the instances"""
         if args:
             attrs_list = ['id', 'widht', 'height', 'x', 'y']
             if len(args) > 1:
