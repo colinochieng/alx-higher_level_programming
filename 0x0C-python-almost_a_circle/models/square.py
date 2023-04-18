@@ -33,7 +33,6 @@ class Square(Rectangle):
                 width = height = args[1]
                 args = list(args)
                 args[1:1 + 1] = [width, height]
-                print(args)
             for i in range(len(args)):
                 setattr(self, attrs_list[i], args[i])
         else:
