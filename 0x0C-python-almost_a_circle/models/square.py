@@ -5,11 +5,10 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Derived class of rectangle"""
-    def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size, size, x=x, y=y, id=id)
 
-    def __str__(self):
-        return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
+    def __init__(self, size, x=0, y=0, id=None):
+        """Initializes from Rectangle"""
+        super().__init__(size, size, x=x, y=y, id=id)
 
     @property
     """Return size of Square"""
@@ -21,6 +20,10 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
+    def __str__(self):
+        """Square User String representation"""
+        return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
 
     def update(self, *args, **kwargs):
         """Updates the fields of the instances"""
