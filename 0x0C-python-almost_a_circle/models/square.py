@@ -28,7 +28,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Updates the fields of the instances"""
         if args:
-            attrs_list = ['id', 'widht', 'height', 'x', 'y']
+            attrs_list = ['id', 'width', 'height', 'x', 'y']
             if len(args) > 1:
                 width = height = args[1]
                 args = list(args)
