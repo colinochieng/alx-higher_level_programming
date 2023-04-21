@@ -3,6 +3,7 @@
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -107,3 +108,35 @@ class Base:
             obj = cls.create(**kwargs)
             objects.append(obj)
         return objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares"""
+        my_tur = turtle.Turtle()
+        my_tur.hideturtle()
+        my_tur.pen(pencolor="blue", pensize=3)
+        my_tur.fillcolor('red')
+        for i in list_rectangles:
+            """"""
+            my_tur.penup()
+            my_tur.goto(i.x, i.y)
+            my_tur.pendown()
+            my_tur.begin_fill()
+            my_tur.forward(i.width)
+            my_tur.lt(90)
+            my_tur.forward(i.height)
+            my_tur.lt(90)
+            my_tur.forward(i.width)
+            my_tur.lt(90)
+            my_tur.forward(i.height)
+            my_tur.end_fill()
+        for i in list_squares:
+            my_tur.penup()
+            my_tur.goto(i.x, i.y)
+            my_tur.pendown()
+            my_tur.begin_fill()
+            for j in range(4):
+                my_tur.forward(i.size)
+                my_tur.lt(90)
+            my_tur.end_fill()
+        turtle.done()
