@@ -21,4 +21,15 @@ module.exports = class Rectangle {
       i++;
     }
   }
+
+  rotate() {
+    this.height += this.width;
+    this.width = this.height - this.width;
+    this.height -= this.width;
+  }
+
+  double() {
+    this.height *= 2;
+    this.width *= 2;
+  }
 };
