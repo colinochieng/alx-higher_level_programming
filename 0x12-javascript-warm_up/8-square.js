@@ -11,8 +11,8 @@ if (isNaN(num)) {
     while (j < num) {
       width += 'X';
       j++;
-      }
+    }
     console.log(width);
     i++;
-    }
+  }
 }
