@@ -22,11 +22,11 @@ module.exports = class Rectangle {
     }
   }
 
-  rotate() {
+  rotate () {
     [this.height, this.width] = [this.width, this.height];
   }
 
-  double() {
+  double () {
     [this.height, this.width] = [this.height * 2, this.width * 2];
   }
 };
