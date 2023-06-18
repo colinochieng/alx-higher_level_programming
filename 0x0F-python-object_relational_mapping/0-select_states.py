@@ -8,7 +8,7 @@ import MySQLdb
 
 
 def list_states(username, password, database):
-   """ Connect to the MySQL server """
+    """ Connect to the MySQL server """
     db = MySQLdb.connect(user=username, passwd=password, db=database)
     cursor = db.cursor()
 
