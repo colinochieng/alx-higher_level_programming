@@ -1,6 +1,5 @@
 #!/bin/bash/python3
 """Module for function that finds a peak in a list of unsorted integers"""
-from sqlalchemy import session
 
 
 def find_peak(arr):
