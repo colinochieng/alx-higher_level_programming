@@ -1,4 +1,4 @@
-#!/bin/bash/python3
+#!/usr/bin/python3
 """Module for function that finds a peak in a list of unsorted integers"""
 
 
