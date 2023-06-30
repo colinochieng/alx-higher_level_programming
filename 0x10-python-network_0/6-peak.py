@@ -9,10 +9,10 @@ def find_peak(arr):
     else:
         low = 0
         high = len(arr) - 1
-        
+
         while low <= high:
             mid = (low + high) // 2
-            
+
             if arr[mid] > arr[mid + 1] and arr[mid - 1] < arr[mid]:
                 return arr[mid]
             elif arr[mid] == arr[mid + 1] and arr[mid - 1] == arr[mid]:
