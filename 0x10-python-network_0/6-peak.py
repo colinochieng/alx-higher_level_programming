@@ -3,6 +3,7 @@
 
 
 def find_peak(arr):
+    """function to find a peak"""
     if len(arr) == 0:
         return None
     else:
