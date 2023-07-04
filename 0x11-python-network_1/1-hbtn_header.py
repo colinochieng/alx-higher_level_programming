@@ -12,4 +12,3 @@ if __name__ == "__main__":
     with request.urlopen(argv[1]) as access:
         headers = access.info()
         print(headers['X-Request-Id'])
-        print(headers)
