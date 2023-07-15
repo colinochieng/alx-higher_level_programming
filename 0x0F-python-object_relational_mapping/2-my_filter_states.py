@@ -20,9 +20,17 @@ def filter_states(username, password, database, state):
     conn.close()
 
 
+# if __name__ == "__main__":
+#     username = sys.argv[1]
+#     password = sys.argv[2]
+#     database = sys.argv[3]
+#     state = sys.argv[4]
+#     filter_states(username, password, database, state)
+
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state = sys.argv[4]
-    filter_states(username, password, database, state)
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("""SELECT * FROM states
+                WHERE name LIKE BINARY '{}'
+                ORDER BY states.id ASC""".format(sys.argv[4]).strip("'"))
+    [print(state) for state in c.fetchall()]
