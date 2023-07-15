@@ -10,8 +10,6 @@ import MySQLdb
 def cities_by_state(username, password, database):
     conn = MySQLdb.Connect(user=username, passwd=password, db=database)
     cursor = conn.cursor()
-    cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
-            ORDER BY states.id ASC""")
     cursor.execute("""SELECT cities.id, cities.name, states.name
                    FROM states INNER JOIN cities
                    ON states.id = cities.state_id
