@@ -12,7 +12,7 @@ def filter_states(username, password, database, state):
     cursor = conn.cursor()
     cursor.execute("""SELECT * FROM states 
                    WHERE name LIKE BINARY '{}' 
-                   ORDER BY states.id""".format(state).strip("'"))
+                   ORDER BY states.id ASC""".format(state).strip("'"))
     result = cursor.fetchall()
     for row in result:
         print(row)
