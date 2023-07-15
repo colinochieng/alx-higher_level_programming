@@ -10,21 +10,16 @@ import MySQLdb
 def cities(username, password, database, state):
     conn = MySQLdb.Connect(user=username, passwd=password, db=database)
     cursor = conn.cursor()
-    cursor.execute("""SELECT cities.name
+    cursor.execute("""SELECT cities.name, states.name
                    FROM states INNER JOIN cities
-                   ON states.id = cities.state_id
-                   WHERE states.name LIKE BINARY '{}'""".format(state))
+                   ON states.id = cities.state_id""")
     result = cursor.fetchall()
-    count = 1
-    for row in result:
-        if count < result.__len__():
-            print(row[0], end=", ")
-        else:
-            print(row[0])
-        count += 1
+    
+    output = ', '.join(row[0] for row in result if row[1] == state)
+    print(output)
     cursor.close()
     conn.close()
 
 
 if __name__ == "__main__":
-    cities(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4].split(";")[0])
+    cities(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
