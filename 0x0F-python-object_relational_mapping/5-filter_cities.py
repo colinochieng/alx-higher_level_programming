@@ -14,7 +14,6 @@ def cities(username, password, database, state):
                    FROM states INNER JOIN cities
                    ON states.id = cities.state_id""")
     result = cursor.fetchall()
-    
     output = ', '.join(row[0] for row in result if row[1] == state)
     print(output)
     cursor.close()
