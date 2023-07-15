@@ -10,7 +10,7 @@ import MySQLdb
 def filter_states(username, password, database, state):
     conn = MySQLdb.Connect(user=username, passwd=password, db=database)
     cursor = conn.cursor()
-    cursor.execute("""SELECT * FROM states WHERE name = '{}'
+    cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
             ORDER BY states.id ASC""".format(state))
     result = cursor.fetchall()
     for row in result:
