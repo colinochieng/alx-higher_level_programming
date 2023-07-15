@@ -13,7 +13,7 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     # Execute the SQL query
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
     cursor.execute(query)
     results = cursor.fetchall()
     # Display the results
