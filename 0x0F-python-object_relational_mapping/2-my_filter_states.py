@@ -10,7 +10,8 @@ import MySQLdb
 def filter_states(username, password, database, state):
     conn = MySQLdb.Connect(user=username, passwd=password, db=database)
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC".format(state))
+    cursor.execute("""SELECT * FROM states WHERE name = '{}'
+            ORDER BY states.id ASC""".format(state))
     result = cursor.fetchall()
     for row in result:
         print(row)
