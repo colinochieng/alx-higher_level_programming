@@ -7,7 +7,7 @@ import sys
 import MySQLdb
 
 
-def cities_by_state(username, password, database, state):
+def cities(username, password, database, state):
     conn = MySQLdb.Connect(user=username, passwd=password, db=database)
     cursor = conn.cursor()
     cursor.execute("""SELECT cities.name
@@ -18,13 +18,13 @@ def cities_by_state(username, password, database, state):
     count = 1
     for row in result:
         if count < result.__len__():
-                print(row[0], end=", ")
+            print(row[0], end=", ")
         else:
-                print(row[0])
+            print(row[0])
         count += 1
     cursor.close()
     conn.close()
 
 
 if __name__ == "__main__":
-    cities_by_state(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4].split(";")[0])
+    cities(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4].split(";")[0])
