@@ -23,5 +23,5 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    state = sys.argv[4].split(';')[0].strip("’")
+    state = sys.argv[4].split(';')[0]
     filter_states(username, password, database, state)
