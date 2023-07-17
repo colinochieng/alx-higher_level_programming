@@ -19,6 +19,7 @@ if __name__ == "__main__":
     session = Session()
 
     for row in session.query(State).order_by(State.id).all():
-        print(str(row.id) + ': ' + row.name)
+        if 'a' in row.name:
+            print(str(row.id) + ': ' + row.name)
 
     session.close()
