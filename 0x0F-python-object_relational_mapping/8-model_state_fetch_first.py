@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    row  = session.query(State).first()
+    row = session.query(State).first()
     if row:
         print(str(row.id) + ': ' + row.name)
     else:
