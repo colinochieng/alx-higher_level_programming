@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-script that lists all State objects from the database hbtn_0e_6_usa
+Script that lists all State objects from the database hbtn_0e_6_usa
+It takes 3 arguments: mysql username, mysql password and database name
+Usage: ./7-model_state_fetch_all.py [uname] [passwd] [db name]
 """
 from sqlalchemy import create_engine
 from sys import argv
