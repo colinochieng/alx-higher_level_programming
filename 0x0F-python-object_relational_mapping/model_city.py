@@ -6,6 +6,7 @@ a State and an instance Base = declarative_base()
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, Integer, create_engine
 from sqlalchemy import ForeignKey
+from model_state import State
 
 
 Base = declarative_base()
