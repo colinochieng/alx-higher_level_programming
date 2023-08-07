@@ -3,5 +3,5 @@ element to red (#FF0000) when the user clicks on the tag DIV#red_header Using jQ
 
 $('DIV#red_header').attr('style', 'cursor: pointer;');
 $('DIV#red_header').on('click', () => {
-  $('header').attr('style', 'color: #FF0000;');
+  $('header').addClass('red');
 });
